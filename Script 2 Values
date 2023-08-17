@@ -1,0 +1,32 @@
+Sub Script2_Values()
+
+Dim maxPercent As Single
+Dim minPercent As Single
+Dim maxTotal As Single
+
+For i = 2 To Rows.Count
+
+Range("Q2") = WorksheetFunction.Max(Cells(i,11).Value)
+maxPercent = Range("Q2")
+
+Range("Q3") = WorksheetFunction.Min(Cells(i,11).Value)
+minPercent = Range(“Q3”)
+
+Range("Q4") = WorksheetFunction.Max(Cells(i,12).Value)
+maxTotal = Range("Q4")
+
+
+        If Cells(i, 11).Value = maxPercent Then
+        Range("P2") = Cells(i, 9).Value
+        
+        ElseIf Cells(i, 11).Value = minPercent Then
+        Range("P3") = Cells(i, 9).Value
+        
+        ElseIf Cells(i, 12).Value = maxTotal Then
+        Range("P4") = Cells(i, 9).Value
+            
+            End If
+            
+    Next i
+
+End Sub
