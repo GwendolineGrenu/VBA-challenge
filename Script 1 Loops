@@ -6,36 +6,46 @@ Dim Percent_Change As Double
 Dim Total_Stock_Volume As Double
 
 Total_Stock_Volume = 0
+Yearly_Change = 0
+Percent_Change = 0
 
 Dim Summary_Table_Row As Integer
   Summary_Table_Row = 2
 
   For t = 2 To Rows.Count
-
-  Range("J" & Summary_Table_Row).Value = Yearly_Change
-
-  Range("K" & Summary_Table_Row).Value = Percent_Change
-
-  Yearly_Change = ((Cells(t, 6) - Cells(t, 3)) / Cells(t, 3)) *100
-
-  Percent_Change = ((Cells(t, 6) - Cells(t, 3)) / Cells(t,3)) * 100
+  
+  If Cells(t + 1, 1).Value <> Cells(t, 1).Value Then
 
 
- If Cells(t + 1, 1).Value <> Cells(t, 1).Value Then
- Ticker = Cells(t, 1).Value
+    Ticker = Cells(t, 1).Value
 
-    
-Total_Stock_Volume = Total_Stock_Volume + Cells(t, 7).Value
+    Yearly_Change = Yearly_Change + (Cells(t, 6).Value - Cells(t, 3).Value)
+
+    Percent_Change = Percent_Change + ((Cells(t, 6).Value - Cells(t, 3).Value) / Cells(t, 3).Value)
+
+    Total_Stock_Volume = Total_Stock_Volume + Cells(t, 7).Value
+
 
 Range("I" & Summary_Table_Row).Value = Ticker
 
 Range("L" & Summary_Table_Row).Value = Total_Stock_Volume
+
+Range("J" & Summary_Table_Row).Value = Yearly_Change
+
+Range("K" & Summary_Table_Row).Value = Percent_Change
+
       
 Summary_Table_Row = Summary_Table_Row + 1
       
 Total_Stock_Volume = 0
+Yearly_Change = 0
+Percent_Change = 0
 
 Else
+
+    Yearly_Change = Yearly_Change + (Cells(t, 6).Value - Cells(t, 3).Value)
+
+    Percent_Change = Percent_Change + ((Cells(t, 6).Value - Cells(t, 3).Value) / Cells(t, 3).Value)
 
     Total_Stock_Volume = Total_Stock_Volume + Cells(t, 7).Value
        
