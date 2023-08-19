@@ -16,7 +16,7 @@ Dim Summary_Table_Row As Integer
 
   Range("K" & Summary_Table_Row).Value = Percent_Change
 
-  Yearly_Change = (Cells(t, 6) - Cells(t, 3)) / Cells(t, 3)
+  Yearly_Change = ((Cells(t, 6) - Cells(t, 3)) / Cells(t, 3)) *100
 
   Percent_Change = ((Cells(t, 6) - Cells(t, 3)) / Cells(t,3)) * 100
 
