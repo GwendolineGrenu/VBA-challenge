@@ -4,17 +4,16 @@ Dim maxPercent As Single
 Dim minPercent As Single
 Dim maxTotal As Single
 
-For i = 2 To Rows.Count
-
-Range("Q2") = WorksheetFunction.Max(Cells(i,11).Value)
+Range("Q2") = WorksheetFunction.Max(Range("K:K").Value)
 maxPercent = Range("Q2")
 
-Range("Q3") = WorksheetFunction.Min(Cells(i,11).Value)
+Range("Q3") = WorksheetFunction.Min(Range("K:K").Value)
 minPercent = Range(“Q3”)
 
-Range("Q4") = WorksheetFunction.Max(Cells(i,12).Value)
+Range("Q4") = WorksheetFunction.Max(Range("L:L").Value)
 maxTotal = Range("Q4")
 
+For i = 2 To Rows.Count
 
         If Cells(i, 11).Value = maxPercent Then
         Range("P2") = Cells(i, 9).Value
