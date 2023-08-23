@@ -1,8 +1,13 @@
 Sub Script2_Values()
 
+For Each ws In Worksheets
+
 Dim maxPercent As Single
 Dim minPercent As Single
 Dim maxTotal As Single
+Dim lastRow As LongLong
+
+lastRow = Cells(Rows.Count, 1).End(xlUp).Row
 
 Range("Q2") = WorksheetFunction.Max(Range("K:K").Value)
 maxPercent = Range("Q2")
@@ -13,7 +18,7 @@ minPercent = Range(“Q3”)
 Range("Q4") = WorksheetFunction.Max(Range("L:L").Value)
 maxTotal = Range("Q4")
 
-For i = 2 To Rows.Count
+For i = 2 To lastRow
 
         If Cells(i, 11).Value = maxPercent Then
         Range("P2") = Cells(i, 9).Value
@@ -26,6 +31,8 @@ For i = 2 To Rows.Count
             
             End If
             
-    Next i
+    Next I
+
+Next
 
 End Sub
