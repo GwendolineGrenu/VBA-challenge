@@ -2,7 +2,7 @@
 
 Hello, 
 
-Please find below my screenshots for this challenge.
+Please find below my new submission for this challenge with all the breakpoints hopefully cleared this time.
 
 Thank you!
 
