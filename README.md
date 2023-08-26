@@ -2,7 +2,7 @@
 
 Hello, 
 
-Please find below my new submission for this challenge with all the breakpoints hopefully cleared this time.
+Please find below my new submission for this challenge with all the breakpoints hopefully cleared this time. To solve my previous overload error I received some help from my tutor, Jesse Wright who helped me to create the very last loop in the first code and also helped me set the "lastrow" condition in replacement of my previous "Rows.Count" function. When trying the code with these new additions the overload error message was then gone and the script was also running a bit faster than previously. 
 
 Thank you!
 
